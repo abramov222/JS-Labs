@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head><meta charset="UTF-8"><title>Задание 1i</title></head>
+<body>
+    <script>
+        let n = parseInt(prompt("Введите количество дней:"));
+        if (!isNaN(n)) {
+            let d = new Date();
+            d.setDate(d.getDate() + n);
+            alert(d.toLocaleDateString());
+        }
+    </script>
+</body>
+</html>

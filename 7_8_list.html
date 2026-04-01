@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ru">
+<body>
+    <ul id="user-list"></ul>
+    <script>
+        function clear(elem) {
+            elem.innerHTML = '';
+        }
+        
+        let list = document.getElementById('user-list');
+        let count = prompt("Сколько пунктов создать?");
+        if (count && !isNaN(count)) {
+            for (let i = 0; i < parseInt(count); i++) {
+                let text = prompt("Содержимое пункта " + (i + 1));
+                if (text === null) break;
+                let li = document.createElement('li');
+                li.textContent = text;
+                list.appendChild(li);
+            }
+        }
+    </script>
+</body>
+</html>

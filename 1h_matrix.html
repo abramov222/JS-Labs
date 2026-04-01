@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head><meta charset="UTF-8"><title>Задание 1h</title></head>
+<body>
+    <script>
+        let n = parseInt(prompt("Введите n:"));
+        if (n > 0) {
+            let m = [], diag = [];
+            for (let i = 0; i < n; i++) {
+                m[i] = [];
+                for (let j = 0; j < n; j++) {
+                    m[i][j] = Math.floor(Math.random() * 100);
+                    if (i === j || i + j === n - 1) diag.push(m[i][j]);
+                }
+            }
+            let max = Math.max(...diag), min = Math.min(...diag);
+            let out = "";
+            for (let i = 0; i < n; i++) {
+                for (let j = 0; j < n; j++) {
+                    if (i === j || i + j === n - 1) {
+                        if (m[i][j] !== max && m[i][j] !== min) m[i][j] = 0;
+                    }
+                    out += m[i][j] + "\t";
+                }
+                out += "\n";
+            }
+            alert("Min: " + min + ", Max: " + max + "\n\n" + out);
+        }
+    </script>
+</body>
+</html>

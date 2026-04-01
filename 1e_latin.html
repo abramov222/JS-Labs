@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head><meta charset="UTF-8"><title>Задание 1e</title></head>
+<body>
+    <script>
+        let s = prompt("Введите строку:");
+        if (s !== null && s.length > 0) {
+            let count = (s.match(/[a-zA-Z]/g) || []).length;
+            alert("Доля латинских букв: " + ((count / s.length) * 100).toFixed(2) + "%");
+        }
+    </script>
+</body>
+</html>

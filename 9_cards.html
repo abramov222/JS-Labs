@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>Лицемер (с)</title>
+</head>
+<body>
+    <header></header>
+    <main class="content">
+        <aside></aside>
+        <section>
+            <div class="header-d">
+                Выберите лицо, которое нравится вам больше остальных:
+            </div>
+            <div class="display">
+                
+            </div>
+        </section>
+    </main>
+
+    <script>
+        const names = ["Иван", "Алексей", "Дмитрий", "Сергей", "Евгений", "Михаил"];
+        const surnames = ["Смирнов", "Иванов", "Кузнецов", "Попов", "Лебедев", "Козлов"];
+
+        function getRandomName() {
+            let n = names[Math.floor(Math.random() * names.length)];
+            let s = surnames[Math.floor(Math.random() * surnames.length)];
+            return n + " " + s;
+        }
+
+        let displayArea = document.querySelector('.display');
+        let count = 0;
+
+        let timer = setInterval(function() {
+            count++;
+            
+            let cardDiv = document.createElement('div');
+            cardDiv.className = 'card';
+            
+            let img = document.createElement('img');
+            img.src = 'https://thispersondoesnotexist.com/?' + count;
+            img.alt = 'Avatar';
+            
+            let descDiv = document.createElement('div');
+            descDiv.className = 'description';
+            
+            let p = document.createElement('p');
+            p.textContent = getRandomName();
+            
+            descDiv.appendChild(p);
+            cardDiv.appendChild(img);
+            cardDiv.appendChild(descDiv);
+            
+            displayArea.appendChild(cardDiv);
+            
+            if (count >= 6) {
+                clearInterval(timer);
+            }
+        }, 2000);
+    </script>
+</body>
+</html>

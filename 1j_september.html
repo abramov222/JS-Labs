@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head><meta charset="UTF-8"><title>Задание 1j</title></head>
+<body>
+    <script>
+        let now = new Date();
+        let target = new Date(now.getFullYear(), 8, 1);
+        if (now > target) target.setFullYear(now.getFullYear() + 1);
+        let m = (target.getFullYear() - now.getFullYear()) * 12 + (target.getMonth() - now.getMonth());
+        alert("Осталось месяцев: " + m);
+    </script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head><meta charset="UTF-8"><title>Задание 1c</title></head>
+<body>
+    <script>
+        let n = parseInt(prompt("Введите натуральное число:"));
+        let result = false;
+        if (n > 0) {
+            for (let i = 1; i * i < n; i++) {
+                let j = Math.sqrt(n - i * i);
+                if (Number.isInteger(j) && j > 0) {
+                    result = true;
+                    break;
+                }
+            }
+            alert(result ? "Можно представить" : "Нельзя представить");
+        }
+    </script>
+</body>
+</html>

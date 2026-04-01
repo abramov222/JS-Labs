@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head><meta charset="UTF-8"><title>Задание 1b</title></head>
+<body>
+    <script>
+        let x1 = parseFloat(prompt("Введите x 1-й вершины:"));
+        let y1 = parseFloat(prompt("Введите y 1-й вершины:"));
+        let x2 = parseFloat(prompt("Введите x противоположной вершины:"));
+        let y2 = parseFloat(prompt("Введите y противоположной вершины:"));
+        let px = parseFloat(prompt("Введите x точки:"));
+        let py = parseFloat(prompt("Введите y точки:"));
+
+        let minX = Math.min(x1, x2), maxX = Math.max(x1, x2);
+        let minY = Math.min(y1, y2), maxY = Math.max(y1, y2);
+
+        if (px >= minX && px <= maxX && py >= minY && py <= maxY) {
+            alert("Точка принадлежит квадрату");
+        } else {
+            alert("Точка НЕ принадлежит квадрату");
+        }
+    </script>
+</body>
+</html>
